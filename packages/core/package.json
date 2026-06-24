@@ -1,0 +1,39 @@
+{
+  "name": "@jsonup/core",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "The core JSON parser, state manager, and document builder for the jsonup ecosystem.",
+  "author": {
+    "name": "Michael Cocova",
+    "email": "michael.cocova@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/michaelcocova/jsonup#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelcocova/jsonup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelcocova/jsonup/issues"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "decimal.js": "10.6.0",
+    "nanoid": "5.1.15"
+  },
+  "devDependencies": {
+    "tsdown": "^0.22.0",
+    "typescript": "^6.0.3"
+  }
+}

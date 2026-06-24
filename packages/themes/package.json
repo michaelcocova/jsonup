@@ -1,0 +1,35 @@
+{
+  "name": "@jsonup/themes",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Theming system and CSS variables for the jsonup ecosystem.",
+  "author": {
+    "name": "Michael Cocova",
+    "email": "michael.cocova@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/michaelcocova/jsonup#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelcocova/jsonup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelcocova/jsonup/issues"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "tsdown": "^0.22.0",
+    "typescript": "^6.0.3"
+  }
+}

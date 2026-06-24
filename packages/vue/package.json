@@ -1,0 +1,61 @@
+{
+  "name": "@jsonup/vue",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Vue 3 adapter and component for rendering the jsonup JSON viewer.",
+  "author": {
+    "name": "Michael Cocova",
+    "email": "michael.cocova@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/michaelcocova/jsonup#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelcocova/jsonup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelcocova/jsonup/issues"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json",
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "@jsonup/core": "workspace:*",
+    "@jsonup/operation": "workspace:*",
+    "@jsonup/themes": "workspace:*"
+  },
+  "devDependencies": {
+    "@tsdown/css": "^0.22.0",
+    "@types/node": "^25.6.2",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "@vitest/browser-playwright": "^4.1.5",
+    "playwright": "^1.59.1",
+    "tsdown": "^0.22.0",
+    "typescript": "^6.0.3",
+    "virtua": "0.49.1",
+    "vite": "^8.0.11",
+    "vitest": "^4.1.5",
+    "vitest-browser-vue": "^2.1.0",
+    "vue": "^3.5.34",
+    "vue-tsc": "^3.2.8"
+  },
+  "inlinedDependencies": {
+    "virtua": "0.49.1"
+  }
+}

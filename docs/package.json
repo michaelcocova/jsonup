@@ -1,0 +1,32 @@
+{
+  "name": "@jsonup/docs",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "scripts": {
+    "docs:dev": "vitepress dev --host",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/fira-code": "^5.2.7",
+    "@jsonup/core": "workspace:*",
+    "@jsonup/operation": "workspace:*",
+    "@jsonup/vue": "workspace:*",
+    "@tailwindcss/vite": "4.3.1",
+    "tailwindcss": "4.3.1",
+    "virtua": "^0.41.5",
+    "vue": "3.5.38"
+  },
+  "devDependencies": {
+    "@shikijs/vitepress-twoslash": "^4.2.0",
+    "@types/node": "26.0.0",
+    "oxc-minify": "latest",
+    "typescript": "^6.0.3",
+    "vitepress": "2.0.0-alpha.17",
+    "vitepress-demo-plugin": "1.5.1"
+  }
+}

@@ -1,0 +1,192 @@
+.jsonup-viewer {
+  --jsonup-color-background: var(--jv-background, #ffffff);
+  --jsonup-color-text: var(--jv-foreground, #24292e);
+  --jsonup-color-muted: var(--jv-line-number, #8b949e);
+  --jsonup-color-hover: #f6f8fa;
+  --jsonup-color-key: var(--jv-property, #0550ae);
+  --jsonup-color-string: var(--jv-string, #0a3069);
+  --jsonup-color-number: var(--jv-number, #953800);
+  --jsonup-color-boolean: var(--jv-boolean, #cf222e);
+  --jsonup-color-null: var(--jv-null, #8250df);
+  --jsonup-color-summary: var(--jv-summary, #656d76);
+  --jsonup-color-punctuation-key-quote: var(
+    --jv-punctuation-quote-key,
+    var(--jv-punctuation-quote, #57606a)
+  );
+  --jsonup-color-punctuation-string-quote: var(
+    --jv-punctuation-quote-string,
+    var(--jv-punctuation-quote, #57606a)
+  );
+  --jsonup-color-punctuation-quote: var(--jv-punctuation-quote, #57606a);
+  --jsonup-color-punctuation-colon: var(--jv-punctuation-colon, #57606a);
+  --jsonup-color-punctuation-comma: var(--jv-punctuation-comma, #57606a);
+  --jsonup-color-punctuation-bracket: var(--jv-punctuation-bracket, #57606a);
+  --jsonup-color-storage-object: var(
+    --jv-storage-object,
+    var(--jsonup-color-punctuation-bracket)
+  );
+  --jsonup-color-storage-array: var(
+    --jv-storage-array,
+    var(--jsonup-color-punctuation-bracket)
+  );
+
+  background: var(--jsonup-color-background);
+  color: var(--jsonup-color-text);
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  &[data-word-wrap="off"] {
+    overflow-x: auto;
+  }
+
+  /* ===== Scrollbar ===== */
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.27 0.01 271.03 / 0.1) transparent;
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: oklch(0.27 0.01 271.03 / 0.1);
+    border-radius: 9999px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &[data-theme-type="dark"] {
+    --jsonup-color-hover: rgba(255, 255, 255, 0.08);
+  }
+
+  &.line-numbers {
+    .line {
+      position: relative;
+      padding-left: 0;
+      grid-template-columns: 48px minmax(0, 1fr);
+    }
+  }
+
+  .line {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    min-height: 24px;
+    padding: 0 8px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+
+    &[data-interactive="true"] {
+      cursor: pointer;
+    }
+
+    &[data-interactive="true"]:hover {
+      background: var(--jsonup-color-hover);
+    }
+  }
+
+  .line-number {
+    padding-right: 12px;
+    // background-color: var(--jv-background);
+    background-color: #eee;
+    position: sticky;
+    left: 0;
+    height: 100%;
+    color: var(--jsonup-color-muted);
+    text-align: right;
+    user-select: none;
+  }
+
+  .content {
+    display: inline-block;
+    min-width: 0;
+    padding-left: calc(var(--jsonup-viewer-line-depth) * 16px);
+    word-break: break-all;
+    text-wrap-mode: nowrap;
+    &.word-wrap {
+      word-break: break-word;
+      text-wrap-mode: wrap;
+    }
+  }
+
+  .key {
+    color: var(--jsonup-color-key);
+  }
+
+  .value {
+    &.string {
+      color: var(--jsonup-color-string);
+    }
+
+    &.number {
+      color: var(--jsonup-color-number);
+    }
+
+    &.boolean {
+      color: var(--jsonup-color-boolean);
+    }
+
+    &.null {
+      color: var(--jsonup-color-null);
+    }
+  }
+
+  .quote,
+  .punctuation.quote {
+    color: var(--jsonup-color-punctuation-quote);
+  }
+
+  .key-quote,
+  .quote-token.key {
+    color: var(--jsonup-color-punctuation-key-quote);
+  }
+
+  .string-quote,
+  .quote-token.string {
+    color: var(--jsonup-color-punctuation-string-quote);
+  }
+
+  .colon,
+  .punctuation.colon {
+    color: var(--jsonup-color-punctuation-colon);
+  }
+
+  .comma,
+  .punctuation.comma {
+    color: var(--jsonup-color-punctuation-comma);
+  }
+
+  .symbol,
+  .punctuation.bracket {
+    color: var(--jsonup-color-punctuation-bracket);
+  }
+
+  .storage.object {
+    color: var(--jsonup-color-storage-object);
+  }
+
+  .storage.array {
+    color: var(--jsonup-color-storage-array);
+  }
+
+  .summary {
+    color: var(--jsonup-color-summary);
+  }
+
+  .line[data-state="open"],
+  .line[data-state="close"],
+  .line[data-state="collapsed"] {
+    .symbol {
+      font-weight: 600;
+    }
+  }
+}
