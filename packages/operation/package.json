@@ -1,7 +1,7 @@
 {
   "name": "@jsonup/operation",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Immutable JSON tree operations for the jsonup ecosystem.",
   "author": {
     "name": "Michael Cocova",

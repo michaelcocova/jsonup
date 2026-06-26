@@ -43,6 +43,7 @@
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+
   &[data-word-wrap="off"] {
     overflow-x: auto;
   }
@@ -73,6 +74,8 @@
       position: relative;
       padding-left: 0;
       grid-template-columns: 48px minmax(0, 1fr);
+      width: max-content;
+      min-width: 100%;
     }
   }
 
@@ -84,6 +87,9 @@
     padding: 0 8px;
     border-radius: 4px;
     white-space: pre-wrap;
+    --jsonup-viewer-line-content-padding: calc(
+      var(--jsonup-viewer-line-depth) * 16px
+    );
 
     &[data-interactive="true"] {
       cursor: pointer;
@@ -96,8 +102,7 @@
 
   .line-number {
     padding-right: 12px;
-    // background-color: var(--jv-background);
-    background-color: #eee;
+    background-color: var(--jv-background);
     position: sticky;
     left: 0;
     height: 100%;
@@ -109,9 +114,10 @@
   .content {
     display: inline-block;
     min-width: 0;
-    padding-left: calc(var(--jsonup-viewer-line-depth) * 16px);
+    padding-left: var(--jsonup-viewer-line-content-padding);
     word-break: break-all;
     text-wrap-mode: nowrap;
+
     &.word-wrap {
       word-break: break-word;
       text-wrap-mode: wrap;

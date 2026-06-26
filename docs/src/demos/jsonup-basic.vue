@@ -18,7 +18,6 @@ const document = createDocument({
   },
 })
 
-console.log({ document })
 const selectedId = ref<string | null>(null)
 
 const items = computed(() =>

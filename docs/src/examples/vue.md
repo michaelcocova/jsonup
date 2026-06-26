@@ -6,6 +6,12 @@
 
 <demo vue="../demos/jsonup-viewer-basic.vue" />
 
+## 显示行号
+
+通过 `lineNumbers` 传入 `true` 来显示行号。
+
+<demo vue="../demos/jsonup-viewer-line-numbers.vue" />
+
 ```vue
 <script setup lang="ts">
 import { GithubLight } from "@jsonup/themes";

@@ -111,10 +111,10 @@ onMounted(() => {
         预览
       </legend>
       <JsonupViewer
-        class="rounded-md"
         :data="(data as any)"
         virtual
-        :line-numbers="true"
+        word-wrap
+        line-numbers
         :theme="theme"
       />
     </fieldset>

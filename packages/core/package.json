@@ -1,7 +1,7 @@
 {
   "name": "@jsonup/core",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The core JSON parser, state manager, and document builder for the jsonup ecosystem.",
   "author": {
     "name": "Michael Cocova",

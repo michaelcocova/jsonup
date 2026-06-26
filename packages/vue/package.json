@@ -1,7 +1,7 @@
 {
   "name": "@jsonup/vue",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue 3 adapter and component for rendering the jsonup JSON viewer.",
   "author": {
     "name": "Michael Cocova",

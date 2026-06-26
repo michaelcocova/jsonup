@@ -11,9 +11,9 @@ export type JsonPrimitive = string | number | boolean | null | Decimal
 export type JsonValue = JsonPrimitive | JsonObject | JsonArray
 
 /**
- * 表示 JSON 输入的基本数据类型的联合类型，包含 string、number、bigint、boolean、null 和 Decimal
+ * 表示 JSON 输入的基本数据类型的联合类型，包含 string、number、bigint、boolean、null、Decimal 和 Date
  */
-export type JsonInputPrimitive = string | number | bigint | boolean | null | Decimal
+export type JsonInputPrimitive = string | number | bigint | boolean | null | Decimal | Date
 
 /**
  * 表示任意合法的 JSON 输入值类型，可以是基本类型、对象或数组

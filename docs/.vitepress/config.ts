@@ -48,6 +48,9 @@ export default defineConfig({
   title: 'jsonup',
   description: 'JSON document model, operations and Vue bindings.',
   vite: {
+    server: {
+      port: 3100,
+    },
     plugins: [...tailwindcss()],
   },
   markdown: {

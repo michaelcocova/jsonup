@@ -43,6 +43,18 @@ export function toJsonValue(value: unknown): JsonValue {
     return new Decimal(value.toString())
   }
 
+  if (value instanceof Date) {
+    return Number.isNaN(value.getTime()) ? null : value.toISOString()
+  }
+
+  if (
+    value !== null
+    && typeof value === 'object'
+    && typeof (value as any).toJSON === 'function'
+  ) {
+    return toJsonValue((value as any).toJSON())
+  }
+
   if (Decimal.isDecimal(value)) {
     return value
   }
